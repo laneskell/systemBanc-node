@@ -80,7 +80,7 @@ function calculateAge(dobString: any) {
 }
 app.get("/ping", (req: Request, res: Response) => {
   try {
-    res.status(200).send("pong");
+    res.status(200).send("pong!");
   } catch (err) {
     res.status(400).send({
       message: err.message,
