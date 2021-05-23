@@ -61,6 +61,16 @@ function calculateAge(dobString) {
     }
     return age;
 }
+app.get("/ping", (req, res) => {
+    try {
+      res.status(200).send("pong!!");
+    } catch (err) {
+      res.status(400).send({
+        message: err.message,
+      });
+    }
+  });
+
 app.get("/users", (req, res) => {
     try {
         res.status(200).send(users);
@@ -276,7 +286,7 @@ app.post("/users/transfer", (req, res) => {
         });
     }
 });
-app.listen(3003, () => {
-    console.log("Server is running at port 3003");
+app.listen(3333, () => {
+    console.log("Server is running at port 3333");
 });
 //# sourceMappingURL=index.js.map
