@@ -78,6 +78,16 @@ function calculateAge(dobString: any) {
   }
   return age;
 }
+app.get("/ping", (req: Request, res: Response) => {
+  try {
+    res.status(200).send("pong");
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+});
+
 
 app.get("/users", (req: Request, res: Response) => {
   try {
